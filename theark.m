@@ -13,7 +13,7 @@ end
 %menu function
 function menu()
     disp("-----------------------Crammer's Ark-----------------------");    
-    disp("-----------------------Version 1.0-------------------------");
+    disp("-----------------------Version 1.0.1-------------------------");
     disp("------Developed By------");
     disp("Aryan Karamtoth (SpaciousCoder78)");
     disp("------------------------Menu-------------------------------");
@@ -25,14 +25,11 @@ function menu()
     %accepting user input
     choice = input(prompt);
     %switch case to divert the user 
-    switch choice
-        %case 1
-        case 1
-           solve();
-        case 2
-            devinfo();
-        %case 3
-        case 3
+    if (choice == 1)
+        solve();
+    elseif (choice == 2)
+        devinfo();
+    elseif (choice== 3)
             disp("Exited the app")
             quit
     end
@@ -48,13 +45,10 @@ function solve()
     %asking the user to pick the option
     prompt = "Enter your choice: ";
     varChoice = input(prompt);
-    switch varChoice
-        %case 1
-        case 1
-            twoVar();
-        %case 2
-        case 2
-            threeVar();
+    if varChoice == 1
+        twoVar();
+    elseif varChoice == 2
+        threeVar();
 
     end
 
@@ -70,12 +64,11 @@ function twoVar()
     %taking input for mesh or node
     prompt = "Enter your choice";
     twoVarChoice = input(prompt);
-    switch twoVarChoice
-        case 1
-            twoVarMesh();
-        case 2
-            twoVarNode();
+    if twoVarChoice == 1
+        twoVarMesh();
 
+    elseif twoVarChoice == 2
+        twoVarNode();
     end
     
 end
@@ -223,14 +216,10 @@ function threeVar()
         "2.Nodal Analysis\n");
     prompt = "Enter your choice: ";
     threeVarChoice = input(prompt);
-
-    switch threeVarChoice
-        case 1
-            threeVarMesh();
-        case 2
-            threeVarNode();
-        otherwise
-            disp("Choice not in options");
+    if threeVarChoice == 1
+        threeVarMesh();
+    elseif threeVarChoice == 2
+        threeVarNode();
 
     end
 
